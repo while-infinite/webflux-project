@@ -24,7 +24,7 @@ public class ProductsController {
         return productsService.findById(id);
     }
 
-    @PostMapping
+    @PostMapping(consumes = {"application/json"})
     public Mono<Product> createProduct(@RequestBody ProductDto productDto) {
         return productsService.create(productDto);
     }
